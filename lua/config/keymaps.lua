@@ -125,15 +125,15 @@ vim.keymap.set({"n", "i", "v"}, "<C-e>t", "<Esc><Cmd>Tex<CR>")
 
 
 -- n i v exception
-vim.keymap.set({"n", "i"}  "<M-p>", "<Esc>mzyyp`zj")
-vim.keymap.set({"n", "i"}  "<C-y><C-]>", "<Esc>yy}pA")
-vim.keymap.set({"n", "i"}  "<C-y><C-g>", "<Esc>yyGo<Esc>pA")
+vim.keymap.set({"n", "i"}, "<M-p>", "<Esc>mzyyp`zj")
+vim.keymap.set({"n", "i"}, "<C-y><C-]>", "<Esc>yy}pA")
+vim.keymap.set({"n", "i"}, "<C-y><C-g>", "<Esc>yyGo<Esc>pA")
 vim.keymap.set("v", "<M-p>", "yp")
 vim.keymap.set("v", "<C-y><C-]>", "y}pA")
 vim.keymap.set("v", "<C-y><C-g>", "yGo<Esc>pA")
 
-vim.keymap.set({"n", "i"}  "<C-x><C-]>", "<Esc>dd}pA")
-vim.keymap.set({"n", "i"}  "<C-x><C-g>", "<Esc>ddGo<Esc>pA")
+vim.keymap.set({"n", "i"},  "<C-x><C-]>", "<Esc>dd}pA")
+vim.keymap.set({"n", "i"}, "<C-x><C-g>", "<Esc>ddGo<Esc>pA")
 vim.keymap.set("v", "<C-x><C-]>", "d}pA")
 vim.keymap.set("v", "<C-x><C-g>", "dGo<Esc>pA")
 
