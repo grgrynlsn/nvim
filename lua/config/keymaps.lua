@@ -1,4 +1,7 @@
 -- n
+vim.keymap.set("n", "<Left>", "<C-o>")
+vim.keymap.set("n", "<Right>", "<C-i>")
+
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
