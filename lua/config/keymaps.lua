@@ -128,14 +128,14 @@ vim.keymap.set({"n", "i", "v"}, "<C-e>t", "<Esc><Cmd>Tex<CR>")
 vim.keymap.set({"n", "i"}  "<M-p>", "<Esc>mzyyp`zj")
 vim.keymap.set({"n", "i"}  "<C-y><C-]>", "<Esc>yy}pA")
 vim.keymap.set({"n", "i"}  "<C-y><C-g>", "<Esc>yyGo<Esc>pA")
-vim.keymap.set("v", "<C-y><C-]>", "y}o<Esc>kp")
-vim.keymap.set("v", "<C-y><C-g>", "yGo<Esc>p")
+vim.keymap.set("v", "<M-p>", "yp")
+vim.keymap.set("v", "<C-y><C-]>", "y}pA")
+vim.keymap.set("v", "<C-y><C-g>", "yGo<Esc>pA")
 
-vim.keymap.set("n", "<C-x><C-g>", "yyGo<Esc>p$")
-vim.keymap.set("i", "<C-x><C-]>", "<Esc>yy}o<Esc>kpA")
-vim.keymap.set("i", "<C-x><C-g>", "<Esc>yyGo<Esc>pA")
-vim.keymap.set("v", "<C-x><C-]>", "y}o<Esc>kp")
-vim.keymap.set("v", "<C-x><C-g>", "yGo<Esc>p")
+vim.keymap.set({"n", "i"}  "<C-x><C-]>", "<Esc>dd}pA")
+vim.keymap.set({"n", "i"}  "<C-x><C-g>", "<Esc>ddGo<Esc>pA")
+vim.keymap.set("v", "<C-x><C-]>", "d}pA")
+vim.keymap.set("v", "<C-x><C-g>", "dGo<Esc>pA")
 
 
 
