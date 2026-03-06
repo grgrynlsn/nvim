@@ -29,11 +29,6 @@ vim.keymap.set("n", "<Leader><Leader>", "<Cmd>:ls<CR>")
 -- vim.keymap.set("i", "<C-Up>", "")
 -- vim.keymap.set("i", "<C-Down>", "")
 
-vim.keymap.set("i", "<C-p>", "<C-r>")
-
-vim.keymap.set("i", "<C-z>", "<Esc>ua")
-vim.keymap.set("i", "<C-r>", "<Esc><C-r>a")
-
 vim.keymap.set("i", "<M-Left>", "<C-w>")
 vim.keymap.set("i", "<M-Up>", "<Esc>dda")
 
@@ -47,7 +42,8 @@ vim.keymap.set("v", ">", ">gv")
 
 
 
--- n i v unchange
+
+-- n i v previousPosition
 vim.keymap.set("n", "<C-w><C-Right>", "<Cmd>+tabm<CR>")
 vim.keymap.set("i", "<C-w><C-Right>", "<Esc><Cmd>+tabm<CR>a")
 vim.keymap.set("v", "<C-w><C-Right>", "<Esc><Cmd>+tabm<CR>gv")
@@ -96,11 +92,17 @@ vim.keymap.set("n", "<C-s>", "<Cmd>w<CR>")
 vim.keymap.set("i", "<C-s>", "<Esc><Cmd>w<CR>a")
 vim.keymap.set("v", "<C-s>", "<Esc><Cmd>w<CR>gv")
 
+vim.keymap.set("n", "<C-c>", "V\"+y")
+vim.keymap.set("i", "<C-c>", "<Esc>V\"+ya")
+vim.keymap.set("v", "<C-c>", "\"+ygv")
 
 
 
--- n i v change
-vim.keymap.set({"n", "i", "v"}, "<C-a>", "<Esc>ggvG")
+
+
+
+-- n i v nextPosition
+vim.keymap.set({"n", "i", "v"}, "<C-a>", "<Esc>ggVG")
 
 vim.keymap.set({"n", "i", "v"}, "<C-h>", "<Esc><C-w>h")
 vim.keymap.set({"n", "i", "v"}, "<C-j>", "<Esc><C-w>j")
@@ -113,31 +115,48 @@ vim.keymap.set({"n", "i", "v"}, "<C-n>", "<Esc><Cmd>enew<CR>")
 vim.keymap.set({"n", "i", "v"}, "<C-w>l", "<Esc><Cmd>vnew<CR>")
 vim.keymap.set({"n", "i", "v"}, "<C-w>j", "<Esc><Cmd>new<CR>")
 
-vim.keymap.set({"n", "i", "v"}, "<M-w>", "<Esc><Cmd>q!<CR>")
+vim.keymap.set({"n", "i", "v"}, "<M-q>", "<Esc><Cmd>q!<CR>")
 
 vim.keymap.set({"n", "i", "v"}, "<C-e><C-e>", "<Esc><Cmd>Ex<CR>")
 vim.keymap.set({"n", "i", "v"}, "<C-e>v", "<Esc><Cmd>Vex<CR>")
 vim.keymap.set({"n", "i", "v"}, "<C-e>o", "<Esc><Cmd>Sex<CR>")
 vim.keymap.set({"n", "i", "v"}, "<C-e>t", "<Esc><Cmd>Tex<CR>")
 
+vim.keymap.set({"n", "i", "v"}, "<C-z>", "<Esc>u")
+vim.keymap.set({"n", "i", "v"}, "<C-r>", "<Esc><C-r>")
+
+vim.keymap.set({"n", "i"}, "<C-y>}", "<Esc>yy}pA")
+vim.keymap.set({"n", "i"}, "<C-y>gg", "<Esc>yyggO<Esc>PA")
+vim.keymap.set({"n", "i"}, "<C-y>G", "<Esc>yyGo<Esc>pA")
+vim.keymap.set("v", "<C-y>}", "y}pA")
+vim.keymap.set("v", "<C-y>gg", "yggO<Esc>PA")
+vim.keymap.set("v", "<C-y>G", "yGo<Esc>pA")
+
+vim.keymap.set({"n", "i"},  "<C-x>}", "<Esc>dd}pA")
+vim.keymap.set({"n", "i"}, "<C-x>gg", "<Esc>ddggO<Esc>PA")
+vim.keymap.set({"n", "i"}, "<C-x>G", "<Esc>ddGo<Esc>pA")
+vim.keymap.set("v", "<C-x>}", "d}pA")
+vim.keymap.set("v", "<C-x>gg", "dggO<Esc>PA")
+vim.keymap.set("v", "<C-x>G", "dGo<Esc>pA")
 
 
 
 
--- n i v exception
-vim.keymap.set({"n", "i"}, "<M-p>", "<Esc>mzyyp`zj")
-vim.keymap.set({"n", "i"}, "<C-y><C-]>", "<Esc>yy}pA")
-vim.keymap.set({"n", "i"}, "<C-y><C-g>", "<Esc>yyGo<Esc>pA")
-vim.keymap.set("v", "<M-p>", "yp")
-vim.keymap.set("v", "<C-y><C-]>", "y}pA")
-vim.keymap.set("v", "<C-y><C-g>", "yGo<Esc>pA")
 
-vim.keymap.set({"n", "i"},  "<C-x><C-]>", "<Esc>dd}pA")
-vim.keymap.set({"n", "i"}, "<C-x><C-g>", "<Esc>ddGo<Esc>pA")
-vim.keymap.set("v", "<C-x><C-]>", "d}pA")
-vim.keymap.set("v", "<C-x><C-g>", "dGo<Esc>pA")
+-- n i 
+vim.keymap.set({"n", "i"}, "<M-p>", "<Esc>mzyyp`zja")
 
+vim.keymap.set("n", "<M-h>", "<Esc>vh")
+vim.keymap.set("n", "<M-l>", "<Esc>vl")
+vim.keymap.set("n", "<M-e>", "<Esc>ve")
+vim.keymap.set("n", "<M-b>", "<Esc>vb")
+vim.keymap.set("i", "<M-h>", "<Esc>v")
+vim.keymap.set("i", "<M-l>", "<Esc>lv")
+vim.keymap.set("i", "<M-e>", "<Esc>lve")
+vim.keymap.set("i", "<M-b>", "<Esc>vb")
 
+vim.keymap.set("n", "<C-p>", "<Esc>\"+p")
+vim.keymap.set("i", "<C-p>", "<Esc>\"+pa")
 
 
 

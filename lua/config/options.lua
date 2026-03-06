@@ -1,3 +1,7 @@
+vim.opt.timeout = false
+
+vim.g.netrw_keepdir = 0
+
 -- Basic Settings
 vim.opt.number = true -- Line numbers
 vim.opt.cursorline = false -- Highlight current line
