@@ -31,9 +31,14 @@ vim.keymap.set("n", "<C-w><Left>", "<Esc><Cmd>vertical resize -2<CR>")
 vim.keymap.set("n", "<C-w><Right>", "<Esc><Cmd>vertical resize +2<CR>")
 
 vim.keymap.set("n", "<C-w><C-n>", "<Esc><Cmd>enew<CR>")
-vim.keymap.set("n", "<C-w><C-v>", "<Esc><Cmd>vnew<CR>")
-vim.keymap.set("n", "<C-w><C-o>", "<Esc><Cmd>new<CR>")
+vim.keymap.set("n", "<C-w>v", "<Esc><Cmd>vnew<CR>")
+vim.keymap.set("n", "<C-w>o", "<Esc><Cmd>new<CR>")
 vim.keymap.set("n", "<C-w><C-w>", "<Cmd>bd<CR>")
+
+vim.keymap.set("n", "<C-e><C-e>", "<Esc><Cmd>Ex<CR>")
+vim.keymap.set("n", "<C-e>v", "<Esc><Cmd>Vex<CR>")
+vim.keymap.set("n", "<C-e>o", "<Esc><Cmd>Sex<CR>")
+vim.keymap.set("n", "<C-e>t", "<Esc><Cmd>Tex<CR>")
 
 
 
@@ -95,11 +100,6 @@ vim.keymap.set({"n", "i", "v"}, "<C-Up>", "<Esc><Cmd>bp<CR>")
 
 vim.keymap.set({"n", "i", "v"}, "<M-q>", "<Esc><Cmd>q!<CR>")
 
-vim.keymap.set({"n", "i", "v"}, "<C-e><C-e>", "<Esc><Cmd>Ex<CR>")
-vim.keymap.set({"n", "i", "v"}, "<C-e>v", "<Esc><Cmd>Vex<CR>")
-vim.keymap.set({"n", "i", "v"}, "<C-e>o", "<Esc><Cmd>Sex<CR>")
-vim.keymap.set({"n", "i", "v"}, "<C-e>t", "<Esc><Cmd>Tex<CR>")
-
 vim.keymap.set({"n", "i", "v"}, "<C-z>", "<Esc>u")
 vim.keymap.set({"n", "i", "v"}, "<C-r>", "<Esc><C-r>")
 
@@ -134,7 +134,6 @@ vim.keymap.set("v", "<C-p>", "d\"+p")
 vim.keymap.set("n", "<M-p>", "<Esc>mzyyp`zj")
 vim.keymap.set("i", "<M-p>", "<Esc>mzyyp`zja")
 vim.keymap.set("v", "<M-p>", "ypgv")
-
 
 
 
