@@ -10,6 +10,11 @@ vim.keymap.set("n", "\\rc", "<Cmd>e C:/Users/User/AppData/Local/nvim/init.lua<CR
 vim.keymap.set("n", "\\map", "<Cmd>e C:/Users/User/AppData/Local/nvim/lua/config/keymaps.lua<CR>")
 vim.keymap.set("n", "\\set", "<Cmd>e C:/Users/User/AppData/Local/nvim/lua/config/options.lua<CR>")
 
+vim.keymap.set("n", "\\ee", "<Esc><Cmd>Ex<CR>")
+vim.keymap.set("n", "\\ev", "<Esc><Cmd>Vex<CR>")
+vim.keymap.set("n", "\\eo", "<Esc><Cmd>Sex<CR>")
+vim.keymap.set("n", "\\et", "<Esc><Cmd>Tex<CR>")
+
 vim.keymap.set("n", "ZZ", "<Cmd>xa<CR>")
 vim.keymap.set("n", "ZQ", "<Cmd>qa!<CR>")
 
@@ -37,11 +42,6 @@ vim.keymap.set("n", "<C-w><C-n>", "<Esc><Cmd>enew<CR>")
 vim.keymap.set("n", "<C-w>v", "<Esc><Cmd>vnew<CR>")
 vim.keymap.set("n", "<C-w>o", "<Esc><Cmd>new<CR>")
 vim.keymap.set("n", "<C-w><C-w>", "<Cmd>bd<CR>")
-
-vim.keymap.set("n", "<C-e><C-e>", "<Esc><Cmd>Ex<CR>")
-vim.keymap.set("n", "<C-e>v", "<Esc><Cmd>Vex<CR>")
-vim.keymap.set("n", "<C-e>o", "<Esc><Cmd>Sex<CR>")
-vim.keymap.set("n", "<C-e>t", "<Esc><Cmd>Tex<CR>")
 
 
 
@@ -109,12 +109,12 @@ vim.keymap.set({"n", "i", "v"}, "<C-r>", "<Esc><C-r>")
 vim.keymap.set("n", "<M-c>}", "yy}p")
 vim.keymap.set("n", "<M-c>gg", "yyggP")
 vim.keymap.set("n", "<M-c>G", "yyGo<Esc>p")
-vim.keymap.set("i", "<M-c>}", "<Esc>yy}pa")
-vim.keymap.set("i", "<M-c>gg", "<Esc>yyggPa")
-vim.keymap.set("i", "<M-c>G", "<Esc>yyGo<Esc>pa")
-vim.keymap.set("v", "<M-c>}", "y}pA")
-vim.keymap.set("v", "<M-c>gg", "yggPA")
-vim.keymap.set("v", "<M-c>G", "yGo<Esc>pA")
+vim.keymap.set("i", "<M-c>}", "<Esc>yy}pi")
+vim.keymap.set("i", "<M-c>gg", "<Esc>yyggPi")
+vim.keymap.set("i", "<M-c>G", "<Esc>yyGo<Esc>pi")
+vim.keymap.set("v", "<M-c>}", "y}p")
+vim.keymap.set("v", "<M-c>gg", "yggP")
+vim.keymap.set("v", "<M-c>G", "yGo<Esc>p")
 
 vim.keymap.set("n", "<M-x>}", "<Esc>dd}p")
 vim.keymap.set("n", "<M-x>gg", "<Esc>ddggP")
@@ -122,9 +122,9 @@ vim.keymap.set("n", "<M-x>G", "<Esc>ddGo<Esc>p")
 vim.keymap.set("i", "<M-x>}", "<Esc>dd}pi")
 vim.keymap.set("i", "<M-x>gg", "<Esc>ddggPi")
 vim.keymap.set("i", "<M-x>G", "<Esc>ddGo<Esc>pi")
-vim.keymap.set("v", "<M-x>}", "d}pA")
-vim.keymap.set("v", "<M-x>gg", "dggPA")
-vim.keymap.set("v", "<M-x>G", "dGo<Esc>pA")
+vim.keymap.set("v", "<M-x>}", "d}p")
+vim.keymap.set("v", "<M-x>gg", "dggP")
+vim.keymap.set("v", "<M-x>G", "dGo<Esc>p")
 
 vim.keymap.set("n", "<C-x>", "<Esc>ddk")
 vim.keymap.set("i", "<C-x>", "<Esc>ddka")
@@ -136,7 +136,7 @@ vim.keymap.set("v", "<C-p>", "d\"+p")
 
 vim.keymap.set("n", "<M-p>", "<Esc>mzyyp`zj")
 vim.keymap.set("i", "<M-p>", "<Esc>mzyyp`zja")
-vim.keymap.set("v", "<M-p>", "ypgv")
+vim.keymap.set("v", "<M-p>", "yPgv")
 
 
 
@@ -158,7 +158,4 @@ vim.keymap.set("i", "<M-b>", "<Esc>vb")
 
 -- ca
 vim.keymap.set("ca", "ba", "vert ba")
-vim.keymap.set("ca", "te", "tex")
-vim.keymap.set("ca", "se", "sex")
-vim.keymap.set("ca", "ve", "vex")
 vim.keymap.set("ca", "lan", "set spell!")
